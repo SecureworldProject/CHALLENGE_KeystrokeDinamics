@@ -89,4 +89,3 @@ datos = pd.concat([pd.DataFrame(tiempopul),pd.DataFrame(tiempointer),pd.DataFram
 print( datos)
 print(Keynum)
 datos.to_excel('sergio.xlsx')
-
