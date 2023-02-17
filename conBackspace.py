@@ -51,13 +51,14 @@ def pulsa(tecla):
 		try:
 			if len(combinacion)==0:
 				Key.append( tecla.char)
-				
-				Keynum.append(tecla.vk)
+				#		_scan
+
+				Keynum.append(tecla._scan)
 				tiempointer.append(difftiempo(datetime.datetime.now()))
 			else:
 				combinacion.append(tecla.char)
 				Key.append(str(combinacion))
-				keynumtemp+=tecla.vk
+				keynumtemp+=tecla._scan
 				Keynum.append(keynumtemp)
 				tiempointer.append(difftiempo(datetime.datetime.now()))
 		except AttributeError:
