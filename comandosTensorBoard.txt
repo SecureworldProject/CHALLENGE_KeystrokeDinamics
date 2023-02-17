@@ -1,4 +1,0 @@
-
-tensorboard dev upload --logdir logs
-
-tensorboard --logdir logs/fit
