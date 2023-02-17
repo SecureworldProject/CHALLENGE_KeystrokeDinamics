@@ -9,7 +9,7 @@ Keynum=[]
 keynumtemp=0
 tiempo=datetime.datetime.now()
 combinacion=[]
-#hola 
+#hola que tal estas
 def difftiempo(temp):
 	global tiempo
 	resul=temp-tiempo
