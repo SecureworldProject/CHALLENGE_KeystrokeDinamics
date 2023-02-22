@@ -38,12 +38,14 @@ for i in range(len(teclas)):
                     vector.append([teclas[i][0],tiempul])
                     UD=teclas[j][1]
                     DD=teclas[i][1]
+                    break
                 except:
                     keyup=teclas[j]
                     UD=teclas[j][1]
                     DD=teclas[i][1]
                     tiempul=abs(teclas[i][1]-teclas[j][1])
                     vector.append([teclas[i][0],tiempul])
+                    break
 vector.pop(-1)
 vector=np.array(vector)
 np.save('array.npy', vector)
