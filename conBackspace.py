@@ -19,7 +19,7 @@ def difftiempo(temp):
 def uncombinacion(tecla):
 	global keynumtemp
 	try:
-		if tecla==kb.Key.space or tecla==kb. Key.enter or tecla==kb.Key.caps_lock:
+		if tecla==kb.Key.space or tecla==kb.Key.enter or tecla==kb.Key.caps_lock:
 
 			Key.append(str(tecla))
 			Keynum.append(tecla.value.vk)
