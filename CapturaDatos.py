@@ -11,7 +11,7 @@ pygame.display.set_caption("Keystroke Dynamics")
 X=True
 teclas=[]
 print(teclas)
-
+#
 while X:
     for event in pygame.event.get():
         if event.type == QUIT:
