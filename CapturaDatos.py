@@ -49,6 +49,6 @@ for i in range(len(teclas)):
                     break
 vector.pop(-1)
 vector=np.array(vector)
-np.save('maria2.npy', vector)
+np.save('gomez1.npy', vector)
             
 
