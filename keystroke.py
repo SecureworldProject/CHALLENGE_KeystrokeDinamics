@@ -53,7 +53,7 @@ def executeChallenge():
     print("result:", result)
     return result
 
-
+#
 # esta parte del codigo no se ejecuta a no ser que sea llamada desde linea de comandos
 if __name__ == "__main__":
     midict = {}
