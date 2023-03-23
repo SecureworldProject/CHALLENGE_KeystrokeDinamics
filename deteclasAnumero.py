@@ -2,7 +2,6 @@ import numpy as np
 
 
 
-
 #funcion en la que trasforma una letra (tecla) en numero para ello lee un array de numpy y asigna un numero que es la posicion dentro del array y si hay un error devuelve 'error'
 def teclasNum(STRtecla):
     #para los test de bufalo
