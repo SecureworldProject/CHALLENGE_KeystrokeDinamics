@@ -44,6 +44,7 @@ modelo.fit(X_trainf,Y_trainf,
            #callbacks=[tensorboard_callback,cm_callback]
            )
 #guardamos el modelo en la misma carpeta aunque se puede pasar una ruta especifica
+
 ########################################
 #pensamos si pasar la ruta por el json
 modelo.save('path_to_my_model.h5')
