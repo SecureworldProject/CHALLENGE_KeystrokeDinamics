@@ -1,4 +1,4 @@
-import pygame,sys
+﻿import pygame,sys
 from pygame.locals import *
 import numpy as np
 import pandas as pd
@@ -11,19 +11,17 @@ def capDatos(texto=None):
     #si no se le pasa a la funcion una frase entra en el bucle y coge una frase
     if texto is None:
         #frase que va a pedir al usuario que escriba
-        texto='Recordareis este dia como el dia en que casi atrapais al capitan Jack Sparrow'
+        texto="recordaréis este día como el día en que casi capturáis al capitán Jack Sparrow"
     #inicializamos pygame
     pygame.init()
-    #seleccionamos una variable que es el tama�o de la ventana
+    #seleccionamos una variable que es el tamaño de la ventana
     WINDOW_SIZE = (500, 500)
     #inicializamos la ventana
     screen = pygame.display.set_mode(WINDOW_SIZE, pygame.RESIZABLE)
     pygame.display.set_caption("Keystroke Dynamics")
-    #frase que va a pedir al usuario que escriba
-    texto='Recordareis este dia como el dia en que casi atrapais al capitan Jack Sparrow'
     #texto que vamos a ir guardando lo que pulsamos
     textointrod=''
-    #variable que contiene el tipo de letra y el tama�o
+    #variable que contiene el tipo de letra y el tamaño
     font = pygame.font.SysFont('arial', 20 )
     #seleccionamos el el color en nuestro caso es blanco ya que el fondo es negro
     text = font.render(texto, True, (255, 255, 255))
@@ -51,7 +49,7 @@ def capDatos(texto=None):
                     except:
                         print('a')
                 else:
-                    #si no es un backspace lo a�ade a la variable textointrod
+                    #si no es un backspace lo añade a la variable textointrod
                     textointrod=textointrod+str(event.unicode)
                 # y rellenamos todo el fondo de negro y pintamos otra vez todo el texto que pide al usuario escribir y el texto introducido
                 text = font.render(texto, True, (255, 255, 255))
@@ -74,5 +72,7 @@ def capDatos(texto=None):
         capDatos()
     return teclas
 
-#print(len(capDatos()))
-
+if __name__ == "__main__":
+    Datos=capDatos()
+    print(len(Datos))
+    np.save('hola.npy', Datos)
