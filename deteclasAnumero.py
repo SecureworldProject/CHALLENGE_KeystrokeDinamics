@@ -1,6 +1,5 @@
 import numpy as np
-
-
+from CapturaDatosreturn import capDatos
 
 #funcion en la que trasforma una letra (tecla) en numero para ello lee un array de numpy y asigna un numero que es la posicion dentro del array y si hay un error devuelve 'error'
 def teclasNum(STRtecla):
@@ -80,6 +79,112 @@ def creararray(teclas):
     return vector
 
 #cargamos los datos en este caso los de bufalo
+
+def leerdatos(dim):
+    X_train=np.load("datos2/alberto1.npy")
+    X_trainf,Y_trainf=arrayentero(creararray(X_train),dim,0)
+
+
+    X_train=np.load("datos2/alberto2.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,0)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/bea1.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,1)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/bea2.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,1)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+    
+    X_train=np.load("datos2/christin21.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,2)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/christina1.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,2)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/laura1.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,3)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/laura2.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,3)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/maria1.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,4)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/maria2.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,4)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/pepe1.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,5)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/pepe2.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,5)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/pilar1.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,6)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/pilar2.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,6)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/yaiza1.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,7)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/yaiza2.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,7)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/yeyo1.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,8)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=np.load("datos2/yeyo2.npy")
+    X_train,Y_train =arrayentero(creararray(X_train),dim,8)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=capDatos()
+    X_train,Y_train =arrayentero(creararray(X_train),dim,9)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+    X_train=capDatos()
+    X_train,Y_train =arrayentero(creararray(X_train),dim,9)
+    X_trainf=np.concatenate((X_trainf,X_train))
+    Y_trainf=np.concatenate((Y_trainf,Y_train))
+
+
+
+    
+    return  X_trainf,Y_trainf
+
 def leerdatosbufalo(dim):
     X_train=np.loadtxt("datos3/002000.txt", dtype='str')
     X_trainf,Y_trainf=arrayentero(creararray(X_train),dim,0)

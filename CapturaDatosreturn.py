@@ -11,7 +11,7 @@ def capDatos(texto=None):
     #si no se le pasa a la funcion una frase entra en el bucle y coge una frase
     if texto is None:
         #frase que va a pedir al usuario que escriba
-        texto="recordaréis este día como el día en que casi capturáis al capitán Jack Sparrow"
+        texto="Recordaréis este día como el día en que casi capturáis al capitán Jack Sparrow"
     #inicializamos pygame
     pygame.init()
     #seleccionamos una variable que es el tamaño de la ventana
@@ -75,4 +75,4 @@ def capDatos(texto=None):
 if __name__ == "__main__":
     Datos=capDatos()
     print(len(Datos))
-    np.save('hola.npy', Datos)
+    np.save('bea2.npy', Datos)

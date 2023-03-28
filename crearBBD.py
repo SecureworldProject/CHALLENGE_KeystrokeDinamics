@@ -2,7 +2,7 @@ import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, LSTM,SimpleRNN,GRU,BatchNormalization,Input
 import tensorflow as tf
-from deteclasAnumero import leerdatosbufalo
+from deteclasAnumero import leerdatosbufalo,leerdatos
 
 #--------------------------------------------------------
 #importamos los datos para analizarlos en la red neuronal
@@ -11,11 +11,11 @@ dim=[50,6]#modificable
 #cargamos el dataset con el que vamos a entrenar  a la red neuronal
 #
 
-X_trainf,Y_trainf, X_testf,Y_testf=leerdatosbufalo(dim)
+X_trainf,Y_trainf=leerdatos(dim)
 
 #---------------------------------------------------------
 #creamos el modelo
-dim_salida = 5
+dim_salida = 10
 na =16
 
 modelo = Sequential()
@@ -38,9 +38,8 @@ Y_trainf=tf.random.shuffle(Y_trainf, seed=1234)
 
 # entremnamos el modelo
 modelo.fit(X_trainf,Y_trainf,
-           validation_split=0.3,
            #validation_data=(X_testf, Y_testf),
-           epochs=40
+           epochs=60
            #callbacks=[tensorboard_callback,cm_callback]
            )
 #guardamos el modelo en la misma carpeta aunque se puede pasar una ruta especifica
