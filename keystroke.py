@@ -21,6 +21,7 @@ def init(props):
 
 def executeChallenge():
     print("Python: starting executeChallenge()")
+    url=props_dict["url"]
     #comprobamos las variables de entorno y cogemos el de SECUREMIRROR_CAPTURES
     dataPath = os.environ['SECUREMIRROR_CAPTURES']
     print ("storage folder is :",dataPath)
@@ -37,7 +38,7 @@ def executeChallenge():
     #cargamos el modelo
     #############################
     #cambiar la ruta si se pasa por el json
-    new_model = keras.models.load_model('path_to_my_model.h5')
+    new_model = keras.models.load_model(url+"path_to_my_model.h5")
     #cerramos el lock
     lock.lockOUT("keystroke")
     #predecimos la cvategoria de los nuevo datos
