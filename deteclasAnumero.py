@@ -80,7 +80,7 @@ def creararray(teclas):
 
 #cargamos los datos en este caso los de bufalo
 
-def leerdatos(dim):
+def leerdatos(dim,metodo):
     X_train=np.load("datos2/alberto1.npy")
     X_trainf,Y_trainf=arrayentero(creararray(X_train),dim,0)
 
@@ -159,16 +159,27 @@ def leerdatos(dim):
     X_train,Y_train =arrayentero(creararray(X_train),dim,7)
     X_trainf=np.concatenate((X_trainf,X_train))
     Y_trainf=np.concatenate((Y_trainf,Y_train))
+    #modo parental
+    if metodo==1:
+        X_train=np.load("datos2/yeyo1.npy")
+        X_train,Y_train =arrayentero(creararray(X_train),dim,8)
+        X_trainf=np.concatenate((X_trainf,X_train))
+        Y_trainf=np.concatenate((Y_trainf,Y_train))
 
-    X_train=np.load("datos2/yeyo1.npy")
-    X_train,Y_train =arrayentero(creararray(X_train),dim,8)
-    X_trainf=np.concatenate((X_trainf,X_train))
-    Y_trainf=np.concatenate((Y_trainf,Y_train))
+        X_train=np.load("datos2/yeyo2.npy")
+        X_train,Y_train =arrayentero(creararray(X_train),dim,8)
+        X_trainf=np.concatenate((X_trainf,X_train))
+        Y_trainf=np.concatenate((Y_trainf,Y_train))
+    else:
+        X_train=capDatos()
+        X_train,Y_train =arrayentero(creararray(X_train),dim,8)
+        X_trainf=np.concatenate((X_trainf,X_train))
+        Y_trainf=np.concatenate((Y_trainf,Y_train))
 
-    X_train=np.load("datos2/yeyo2.npy")
-    X_train,Y_train =arrayentero(creararray(X_train),dim,8)
-    X_trainf=np.concatenate((X_trainf,X_train))
-    Y_trainf=np.concatenate((Y_trainf,Y_train))
+        X_train=capDatos()
+        X_train,Y_train =arrayentero(creararray(X_train),dim,8)
+        X_trainf=np.concatenate((X_trainf,X_train))
+        Y_trainf=np.concatenate((Y_trainf,Y_train))
 
     X_train=capDatos()
     X_train,Y_train =arrayentero(creararray(X_train),dim,9)

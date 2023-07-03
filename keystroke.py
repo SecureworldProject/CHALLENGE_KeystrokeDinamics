@@ -8,20 +8,23 @@ from tensorflow import keras
 
 props_dict = {}
 DEBUG_MODE = True
+url=''
 
 # funcion init devuelve un 0 que es valido ya que suponemos que el usuario va a tener siempre 8un teclado con el que pueda escribir
 def init(props):
     global props_dict
+    global url
     print("Python: starting challenge init()")
     #cargamos el json que le pasemos y lo guardamos en la variable global
     props_dict = props
+    url=props_dict["url"]
     return 0
 
 
 
 def executeChallenge():
     print("Python: starting executeChallenge()")
-    url=props_dict["url"]
+    
     #comprobamos las variables de entorno y cogemos el de SECUREMIRROR_CAPTURES
     dataPath = os.environ['SECUREMIRROR_CAPTURES']
     print ("storage folder is :",dataPath)
@@ -46,6 +49,12 @@ def executeChallenge():
     print(np.argmax(new_predictions, axis=1))
     # y nos quedamos con la categoria que mas se repite
     cad=np.bincount(np.argmax(new_predictions, axis=1)).argmax()
+    if props_dict['metodo']==2:
+        if cad>7:
+            cad=1
+        else:
+            cad=0
+
     #y generamos el resultado
     cad="%d"%(cad)
     key = bytes(cad,'utf-8')
@@ -57,6 +66,7 @@ def executeChallenge():
 #
 # esta parte del codigo no se ejecuta a no ser que sea llamada desde linea de comandos
 if __name__ == "__main__":
-    midict = {}
-    init(midict)
+    midict = {"metodo":2}
+    props_dict = midict
+    url='./'
     executeChallenge()

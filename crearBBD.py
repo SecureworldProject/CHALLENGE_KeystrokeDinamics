@@ -10,8 +10,10 @@ from deteclasAnumero import leerdatosbufalo,leerdatos
 dim=[50,6]#modificable
 #cargamos el dataset con el que vamos a entrenar  a la red neuronal
 #
+#metodo1=modo empresarial
+#metodo 2=modo parental
 
-X_trainf,Y_trainf=leerdatos(dim)
+X_trainf,Y_trainf=leerdatos(dim,metodo)
 
 #---------------------------------------------------------
 #creamos el modelo
