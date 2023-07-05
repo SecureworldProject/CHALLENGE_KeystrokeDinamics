@@ -49,7 +49,7 @@ def executeChallenge():
     print(np.argmax(new_predictions, axis=1))
     # y nos quedamos con la categoria que mas se repite
     cad=np.bincount(np.argmax(new_predictions, axis=1)).argmax()
-    if props_dict['metodo']==2:
+    if props_dict['metodo']=='parental':
         if cad>7:
             cad=1
         else:
