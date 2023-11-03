@@ -49,8 +49,11 @@ def executeChallenge():
     print(np.argmax(new_predictions, axis=1))
     # y nos quedamos con la categoria que mas se repite
     cad=np.bincount(np.argmax(new_predictions, axis=1)).argmax()
+    #cad es el resultado que vamos a devolver si es modo parental entrara dentro del if y si no. devolvera directamente cad la "categoria"
+    
     if props_dict['metodo']=='parental':
         if cad>7:
+            #si la categoria es 8 o 9 es el padre o madre por lo tanto devolvera un 1
             cad=1
         else:
             cad=0
