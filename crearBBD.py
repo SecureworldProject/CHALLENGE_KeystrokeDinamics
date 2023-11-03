@@ -6,12 +6,14 @@ from deteclasAnumero import leerdatosbufalo,leerdatos
 
 #--------------------------------------------------------
 #importamos los datos para analizarlos en la red neuronal
-#dimension de entrada de la red neuronal el primer digito es el tamaño de la ventana el otro se mantiene siempre
+#dimension de entrada de la red neuronal el primer digito es el tamaÃ±o de la ventana el otro se mantiene siempre
 dim=[50,6]#modificable
 #cargamos el dataset con el que vamos a entrenar  a la red neuronal
 #
 #metodo1=modo empresarial
 #metodo 2=modo parental
+
+metodo=1
 
 X_trainf,Y_trainf=leerdatos(dim,metodo)
 
