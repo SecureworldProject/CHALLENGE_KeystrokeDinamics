@@ -12,3 +12,15 @@
 <li>deteclasAnumero.py: En este archivo se encuentra el código que transforma las teclas en IDs.</li>
   </ul>
 </p>
+<h3>modos de funcionamiento</h3>
+<p>este challenge tiene dos modos de funcionamiento: modo parental y modo empresarial</p>
+<p>
+  <ul>
+    <li>
+      modo empresarial:devuelve un valor entre 0 a 10.
+    </li>
+    <li>
+      modo parental:devuelve un 1 si es padre o madre y un 0 si no es padre y madre
+    </li>
+  </ul>
+</p>
