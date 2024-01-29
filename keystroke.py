@@ -54,9 +54,9 @@ def executeChallenge():
     if props_dict['metodo']=='parental':
         if cad>7:
             #si la categoria es 8 o 9 es el padre o madre por lo tanto devolvera un 1
-            cad='\0'
+            cad=0
         else:
-            cad='\u0001'
+            cad=1
             
     #y generamos el resultado
     cad="%d"%(cad)
